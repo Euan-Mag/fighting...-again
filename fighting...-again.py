@@ -3,7 +3,7 @@
 ## Idea
 # a challenging (not impossible), medieval fantasy game
 # the player and enemy takes turns fighting
-# the player can also burn BUT the enemy can also poison
+# the player can burn the enemy BUT the enemy can use poison
 # use // in mathematical operations for rounded-down division
 
 import random
@@ -115,8 +115,8 @@ def burn(): ### burn def
   elif luck <= 60: ## SUCCESSFUL BURN
     print("successful burn! enemy is burning!")
     burn = True
-  else:
-    print("miss") ## MISS
+  else: ## MISS
+    print("miss")
 
 def enemyAttack():
   luck = random.randint(1, 100) #- luck
@@ -132,8 +132,6 @@ def enemyAttack():
 
 def enemyStun(): ###### CONTINUE ON THIS
   luck = random.randint(1, 100) #- luck
-
-  
 
 while True: ##### MAIN GAME #####
   inspecPlayer()
@@ -188,10 +186,10 @@ while True: ##### MAIN GAME #####
         player[2] -= 42
     elif choice.lower() == "run": ### COWARDICE ###
       print("Coward!")
-      player[0] -= 1000
     else: ## ERROR
       print("not an action or you mispelt it.")
     attempt += 1
+    
     if poison == True: ### POISON
       print()
       player[0] -= 3
